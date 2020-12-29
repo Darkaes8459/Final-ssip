@@ -27,3 +27,17 @@ class Composer(models.Model):
 
     def __str__(self):
         return f'{self.last_name}, {self.first_name}'
+
+class Album(models.Model):
+    title = models.CharField(max_length=200)
+    composer = models.ForeignKey('Composer', on_delete=models.SET_NULL, null=True)
+    genre = models.ManyToManyField(Genre)
+
+class Radio(models.Model)
+    radio_name = models.CharField(max_length=100)
+    genre = models.ManyToManyField(Genre)
+
+class Charts(models.Model)
+    title = models.CharField(max_length=100)
+    genre = models.ManyToManyField(Genre)
+
