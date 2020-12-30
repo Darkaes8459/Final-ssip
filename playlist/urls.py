@@ -14,3 +14,4 @@ urlpatterns = [
     path('genres/', views.list_genres, name='genres'),
     path('musics/', views.list_musics, name='musics'),
 ]
+jgkhjbkjj
