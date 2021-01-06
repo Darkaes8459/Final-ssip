@@ -17,7 +17,7 @@ def index(request):
     num_genres = Genre.objects.all().count()
     num_albums = Album.objects.all().count()
     num_charts = Charts.objects.all().count()
-    num_Radio  = Radio.objects.all().count()
+    num_radios  = Radio.objects.all().count()
 
     context = {
         'num_musics': num_musics,
@@ -25,6 +25,6 @@ def index(request):
         'num_genres': num_genres,
         'num_albums': num_albums,
         'num_charts': num_charts,
-        'num_radios': num_Radio,
+        'num_radios': num_radios,
     }
     return render(request, 'index.html', context=context)

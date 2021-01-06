@@ -1,0 +1,11 @@
+{% extends "base_generic.html" %} {% block content %}
+<h1>All Albums Page</h1>
+<p>Albums Registered in the Library:</p>
+<ul>
+    {% for music in albums %}
+    <li><strong>{{ album.music }}</strong> ({{ album.composer }}) - <a href="{% url 'edit_album' album.id %}">Edit</a> - <a href="{% url 'delete_album' album.id %}">Delete</a></li><br> {% endfor %}
+</ul>
+<p>
+    <a href="{% url 'add_album' %}">Add Album</a>
+</p>
+{% endblock %}

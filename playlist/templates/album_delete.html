@@ -1,0 +1,8 @@
+{% extends "base_generic.html" %} {% block content %}
+<h1>Deleting album : {{ album }}</h1>
+<form action="" method="POST">
+    {% csrf_token %}
+    <input type="submit" value="Confirm" class="btn btn-success" />
+    <a href="{% url 'albums' %}" class="btn btn-danger">Cancel</a>
+</form>
+{% endblock %}

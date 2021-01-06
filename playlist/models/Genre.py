@@ -8,5 +8,5 @@ class Genre(models.Model):
         app_label = 'playlist'
 
     def __str__(self):
-        return self.name
+        return self.music_name
 

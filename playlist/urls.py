@@ -20,14 +20,18 @@ urlpatterns = [
     path('genres/', Genre_controllers.list_genres, name='genres'),
     path('music/', Music_controllers.list_musics, name='musics'),
     path('radio/', Radio_contollers.list_radio, name='radios'),
+    path('albums/', Album_controllers.list_albums, name='albums'),
 
- 
     path('charts/', Charts_controllers.list_Charts, name='charts'),
     path('charts/add/', Charts_controllers.add_Charts, name='add_charts'),
     path('charts/edit/<int:charts_id>', Charts_controllers.edit_Charts, name='edit_charts'),
     path('charts/delete/<int:charts_id>', Charts_controllers.delete_Charts, name='delete_charts'),
 
-    
+    path('album/add/', Album_controllers.add_album, name='add_album'),
+    path('album/edit/<int:album_id>', Album_controllers.edit_album, name='edit_album'),
+    path('album/delete/<int:album_id>', Album_controllers.delete_album, name='delete_album'),
+
+
     path('register', registration_controller.index, name='register'),
 
 ]

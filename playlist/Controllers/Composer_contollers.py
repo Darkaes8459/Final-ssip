@@ -29,7 +29,7 @@ def edit_composer(request, composer_id):
             form.save()
             return HttpResponseRedirect(reverse('composers'))
     else:
-        composer = Radio.objects.get(pk=composer_id)
+        composer = Composer.objects.get(pk=composer_id)
         fields = model_to_dict(composer)
         form = ComposerForm(initial=fields, instance=composer)
     context = {
