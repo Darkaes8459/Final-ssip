@@ -1,0 +1,48 @@
+{% extends 'templates/base_generic.html' %} {% block title %}
+<title>
+    Registration
+</title>
+{% endblock %} {% block content %}
+<div class="form">
+    <div class="row text-center">
+        <div class="col-12">
+            <h1>{{ user_exists_error }}</h1>
+        </div>
+    </div>
+    <div class="col-12">
+        <div class="row text-center">
+            <div class="col-12 text-center">
+                <form action="" method="post" id="formregistration">
+                    {% csrf_token %}
+                    <div class="row">
+                        <div class="col-6 text-left">
+                            <label for="username">Username</label>
+                            <div class="textbox">
+                                <input type="text" name="username" id="input1" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6 text-left">
+                            <label for="email">E-Mail</label>
+                            <div class="textbox">
+                                <input type="text" name="email" id="input2" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6 text-left">
+                            <label for="password">Password</label>
+                            <div class="textbox">
+                                <input type="password" name="password" id="input3" />
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" value="Register" class="btn btn-active btn-info">Register</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+{% endblock %}
