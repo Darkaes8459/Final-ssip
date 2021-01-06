@@ -8,5 +8,7 @@ class Charts(models.Model):
     class meta:
         app_label = 'playlist'
 
-    def __str__(self):
-        return f'{self.chartsradio_name}'
+
+def __str__(self):
+        return self.name
+    

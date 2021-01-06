@@ -8,7 +8,7 @@ from playlist.models.Genre import Genre
 from playlist.models.Composer import Composer
 from playlist.models.Charts import Charts
 from playlist.models.Radio import Radio
-from playlist.models.Album import Radio
+from playlist.models.Album import Album
 
 
 def index(request): 

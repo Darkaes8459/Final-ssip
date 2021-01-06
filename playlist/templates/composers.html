@@ -1,0 +1,12 @@
+{% extends "base_generic.html" %} {% block content %}
+<h1>All Composers Page</h1>
+<p>Composers Registered in the Library:</p>
+<ul>
+    {% for composer in composers %}
+    <li><strong>{{ composer }}</strong> - <a href="{% url 'edit_composer' composer.id %}">Edit</a> - <a href="{% url 'delete_composer' composer.id %}">Delete</a></li>
+    {% endfor %}
+</ul>
+<p>
+    <a href="{% url 'add_composer' %}">Add Composer</a>
+</p>
+{% endblock %}

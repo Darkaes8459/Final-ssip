@@ -3,13 +3,15 @@ from django.core.paginator import Paginator
 from django.forms.models import model_to_dict
 from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse
-from Music.models.genre import Genre
+from playlist.models.Genre import Genre
+from playlist.forms import GenreForm
 
-def index(request):
-    # get all authors and add to context dictionary
-    genre = Genre.objects.all()
+
+
+def list_genres(request):
+    genres = Genre.objects.all()
     context = {
-        'genre': genre,
+        'genres': genres,
     }
     # process the template and pass the context
-    return render(request, 'genre/index.html', context=context)
+    return render(request, 'genres.html', context=context)

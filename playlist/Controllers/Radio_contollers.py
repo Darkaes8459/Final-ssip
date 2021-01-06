@@ -4,6 +4,7 @@ from django.forms.models import model_to_dict
 from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse
 from playlist.models.Radio import Radio
+from playlist.forms import RadioForm
 
 def add_radio(request):
     if request.method == 'POST':
@@ -19,7 +20,7 @@ def add_radio(request):
     }
     return render(request, 'radio_form.html', context=context)
 
-def edit_Radio(request, Radio_id):
+def edit_radio(request, Radio_id):
     if request.method == 'POST':
         radio = Radio.objects.get(pk=radio_id)
         form = RadioForm(request.POST, instance=radio)
@@ -36,7 +37,7 @@ def edit_Radio(request, Radio_id):
     }
     return render(request, 'radio_form.html', context=context)
 
-def delete_Radio(request, radio_id):
+def delete_radio(request, radio_id):
     radio = Radio.objects.get(pk=radio_id)
     if request.method == 'POST':
         radio.delete()
@@ -45,3 +46,11 @@ def delete_Radio(request, radio_id):
         'radio': radio
     }
     return render(request, 'radio_delete_form.html', context=context)
+    
+def list_radio(request):
+    radio = radio.objects.all()
+    context = {
+        'radio': radio,
+    }
+
+    return render(request, 'Radio.html', context=context)

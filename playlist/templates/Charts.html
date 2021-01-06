@@ -1,0 +1,12 @@
+{% extends "base_generic.html" %} {% block content %}
+<h1>All Charts Page</h1>
+<p>Radio Charts in the Library:</p>
+<ul>
+    {% for Charts in Radio %}
+    <li><strong>{{ Charts }}</strong> - <a href="{% url 'edit_Charts' Charts.id %}">Edit</a> - <a href="{% url 'delete_Charts' Charts.id %}">Delete</a></li>
+    {% endfor %}
+</ul>
+<p>
+    <a href="{% url 'add_Charts' %}">Add Radio</a>
+</p>
+{% endblock %}

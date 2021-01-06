@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 from django.shortcuts import render
 from django.conf import settings
 
+
 def index(request):
     error_message = ''
     if request.method == 'POST':

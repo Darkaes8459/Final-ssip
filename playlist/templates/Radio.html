@@ -1,0 +1,12 @@
+{% extends "base_generic.html" %} {% block content %}
+<h1>All Radio Page</h1>
+<p>Radio Registered in the Library:</p>
+<ul>
+    {% for Radio in Radio %}
+    <li><strong>{{ Radio }}</strong> - <a href="{% url 'edit_Radio' Radio.id %}">Edit</a> - <a href="{% url 'delete_Radio' Radio.id %}">Delete</a></li>
+    {% endfor %}
+</ul>
+<p>
+    <a href="{% url 'add_Radio' %}">Add Radio</a>
+</p>
+{% endblock %}

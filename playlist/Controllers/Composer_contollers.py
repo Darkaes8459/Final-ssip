@@ -3,7 +3,8 @@ from django.shortcuts import render
 from django.forms.models import model_to_dict
 from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse
-from pizza.models.topping import Topping
+from playlist.models.Composer import Composer
+from playlist.forms import ComposerForm
 
 
 def add_composer(request):
@@ -46,3 +47,11 @@ def delete_composer(request, composer_id):
         'composer': composer
     }
     return render(request, 'composer_delete_form.html', context=context)
+
+def list_composers(request):
+    composers = Composer.objects.all()
+    context = {
+        'composers': composers,
+    }
+
+    return render(request, 'composers.html', context=context)

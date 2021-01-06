@@ -3,7 +3,11 @@ from django.core.paginator import Paginator
 from django.forms.models import model_to_dict
 from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse
-from playlist.models.genre import Genre
+from playlist.models.Genre import Genre
+from playlist.models.Music import Music
+from playlist.forms import MusicForm
+
+
 
 def add_music(request):
     if request.method == 'POST':
@@ -45,3 +49,11 @@ def delete_music(request, music_id):
         'music': music
     }
     return render(request, 'music_delete_form.html', context=context)
+
+def list_musics(request):
+    musics = Music.objects.all()
+    context = {
+        'musics': musics,
+    }
+    # process the template and pass the context
+    return render(request, 'musics.html', context=context)
